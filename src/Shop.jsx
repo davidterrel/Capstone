@@ -1,0 +1,20 @@
+import React from "react";
+import { PRODUCTS } from "./products"
+import Product from "./product";
+
+export default function Shop() {
+    return (
+        <>
+            <div className="shop">
+                <div className="shopTitle">
+                    <h1>Davids Shop</h1>
+                </div>
+                <div className="produc"> {PRODUCTS.map((product) => (
+                    <Product data={product} />
+                ))}
+                </div>
+            </div>
+
+        </>
+    )
+}
