@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
-import { PRODUCTS } from "./products";
-import Product from "./Product";
 import { ShopContext } from "./assets/shop-context";
+import { PRODUCTS } from "./products";
 import CartItem from "./CartItem";
-// import "./cart.css"
-
+import { useNavigate } from "react-router-dom";
+import "./cart.css";
 
 export default function Cart() {
-    const { cartItems } = useContext(ShopContext);
+    const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
     const totalAmount = getTotalCartAmount();
 
     const navigate = useNavigate();
+
     return (
         <>
             <div className="cart">
@@ -44,5 +44,5 @@ export default function Cart() {
                 )}
             </div>
         </>
-    )
-}
+    );
+};
