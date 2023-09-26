@@ -4,15 +4,16 @@ import Navbar from './Navbar';
 import Shop from './Shop'
 import Contact from './Contact';
 import Cart from './Cart';
-import ShopContextProvider from './assets/shop-context';
-import { AuthProvider } from './AuthContext';
+import ShopContextProvider from './context/ShopContext';
+// import { AuthProvider } from './AuthContext';
+import ProductContextProvider from './context/ProductContext';
 
 
 function App() {
 
   return (
     <>
-      <AuthProvider>
+      <ProductContextProvider>
         <ShopContextProvider>
           <Router>
             <Navbar />
@@ -23,7 +24,7 @@ function App() {
             </Routes>
           </Router>
         </ShopContextProvider>
-      </AuthProvider>
+      </ProductContextProvider>
     </>
   )
 }

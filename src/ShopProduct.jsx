@@ -1,20 +1,22 @@
-import { ShopContext } from "./assets/shop-context";
+import { ShopContext } from "./context/ShopContext";
 import { useContext } from "react";
 
 export default function ShopProduct(props) {
-    const { id, productName, price, productImage } = props.data;
+    const { id, title, price, image, desciption, category } = props.data;
     const { addToCart, cartItems } = useContext(ShopContext);
 
     const cartItemAmount = cartItems[id]
     return (
         <>
             <div className="product">
-                <img src={productImage} />
+                <img src={image} />
                 <div className="description">
                     <p>
-                        <b>{productName} </b>
+                        <b>{title} </b>
                     </p>
                     <p>{price}</p>
+                    <p>{category}</p>
+
                 </div>
                 <button className="addToCartBttn" onClick={() => addToCart(id)}>Add To Cart {cartItemAmount > 0 && <> ({cartItemAmount})</>}</button>
             </div>

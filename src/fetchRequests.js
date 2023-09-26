@@ -2,6 +2,7 @@ export const URL = "https://fakestoreapi.com"
 
 //GET Products
 export async function fetchAllProducts() {
+    console.log("hello world")
     try {
         const response = await fetch(`${URL}/products`);
         const result = response.json();
