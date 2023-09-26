@@ -1,6 +1,6 @@
 import React from "react";
 import { PRODUCTS } from "./products"
-import Product from './Product'
+import ShopProduct from "./ShopProduct";
 import "./shop.css";
 
 export default function Shop() {
@@ -13,7 +13,7 @@ export default function Shop() {
 
                 <div className="products">
                     {PRODUCTS.map((product) => (
-                        <Product key={product.id} data={product} />
+                        <ShopProduct key={product.id} data={product} />
                     ))}
                 </div>
             </div>
