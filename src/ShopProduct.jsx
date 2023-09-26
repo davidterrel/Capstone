@@ -1,4 +1,5 @@
 import { ShopContext } from "./assets/shop-context";
+import { useContext } from "react";
 
 export default function ShopProduct(props) {
     const { id, productName, price, productImage } = props.data;
