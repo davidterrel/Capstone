@@ -3,7 +3,7 @@ import { ShopContext } from "./assets/shop-context";
 import { PRODUCTS } from "./products";
 import CartItem from "./CartItem";
 import { useNavigate } from "react-router-dom";
-import "./cart.css";
+import "./Cart.css";
 
 export default function Cart() {
     const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
