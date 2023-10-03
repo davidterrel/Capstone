@@ -1,13 +1,17 @@
 import React, { useContext } from "react";
-import { ShopContext } from "./context/ShopContext";
+import { ShopContext } from "../context/ShopContext";
 import CartItem from "./CartItem";
 import { useNavigate } from "react-router-dom";
 import "./Cart.css";
+import { ProductContext } from "../context/ProductContext";
+
+
+
 
 export default function Cart() {
     const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
     const totalAmount = getTotalCartAmount();
-
+    const { PRODUCTS } = useContext(ProductContext)
     const navigate = useNavigate();
 
     return (
